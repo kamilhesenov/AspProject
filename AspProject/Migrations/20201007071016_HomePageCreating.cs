@@ -16,9 +16,6 @@ namespace AspProject.Migrations
                     AddedDate = table.Column<DateTime>(nullable: true),
                     Title = table.Column<string>(maxLength: 150, nullable: false),
                     Content = table.Column<string>(maxLength: 300, nullable: false),
-                    Icon = table.Column<string>(maxLength: 100, nullable: false),
-                    Heading = table.Column<string>(maxLength: 50, nullable: false),
-                    Subject = table.Column<string>(maxLength: 50, nullable: false),
                     Photo = table.Column<string>(maxLength: 100, nullable: false)
                 },
                 constraints: table =>
@@ -39,22 +36,6 @@ namespace AspProject.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DownloadApps", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "DownloadAppStors",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    AddedDate = table.Column<DateTime>(nullable: true),
-                    Title = table.Column<string>(maxLength: 150, nullable: false),
-                    Content = table.Column<string>(maxLength: 300, nullable: false),
-                    Icon = table.Column<string>(maxLength: 100, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_DownloadAppStors", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -131,7 +112,6 @@ namespace AspProject.Migrations
                     AddedDate = table.Column<DateTime>(nullable: true),
                     Title = table.Column<string>(maxLength: 150, nullable: false),
                     Content = table.Column<string>(maxLength: 300, nullable: false),
-                    Heading = table.Column<string>(maxLength: 50, nullable: false),
                     Photo = table.Column<string>(maxLength: 100, nullable: false),
                     Category = table.Column<string>(maxLength: 50, nullable: false)
                 },
@@ -165,7 +145,7 @@ namespace AspProject.Migrations
                     Title = table.Column<string>(maxLength: 150, nullable: false),
                     Content = table.Column<string>(maxLength: 300, nullable: false),
                     Info = table.Column<string>(maxLength: 200, nullable: false),
-                    MainIcon = table.Column<string>(maxLength: 100, nullable: false)
+                    Icon = table.Column<string>(maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -193,9 +173,6 @@ namespace AspProject.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    AddedDate = table.Column<DateTime>(nullable: true),
-                    Title = table.Column<string>(maxLength: 150, nullable: false),
-                    Content = table.Column<string>(maxLength: 300, nullable: false),
                     FullName = table.Column<string>(maxLength: 100, nullable: false),
                     Position = table.Column<string>(maxLength: 50, nullable: false),
                     Text = table.Column<string>(maxLength: 300, nullable: false),
@@ -225,6 +202,20 @@ namespace AspProject.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "MyProperty",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Heading = table.Column<string>(maxLength: 50, nullable: false),
+                    Subject = table.Column<string>(maxLength: 50, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MyProperty", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Promos",
                 columns: table => new
                 {
@@ -246,9 +237,6 @@ namespace AspProject.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    AddedDate = table.Column<DateTime>(nullable: true),
-                    Title = table.Column<string>(maxLength: 150, nullable: false),
-                    Content = table.Column<string>(maxLength: 300, nullable: false),
                     Email = table.Column<string>(maxLength: 100, nullable: false),
                     Address = table.Column<string>(maxLength: 200, nullable: false),
                     Phone = table.Column<string>(maxLength: 50, nullable: false),
@@ -268,9 +256,6 @@ namespace AspProject.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    AddedDate = table.Column<DateTime>(nullable: true),
-                    Title = table.Column<string>(maxLength: 150, nullable: false),
-                    Content = table.Column<string>(maxLength: 300, nullable: false),
                     Text = table.Column<string>(maxLength: 500, nullable: false),
                     FullName = table.Column<string>(maxLength: 100, nullable: false),
                     Position = table.Column<string>(maxLength: 50, nullable: false),
@@ -307,9 +292,6 @@ namespace AspProject.Migrations
                 name: "DownloadApps");
 
             migrationBuilder.DropTable(
-                name: "DownloadAppStors");
-
-            migrationBuilder.DropTable(
                 name: "Heroes");
 
             migrationBuilder.DropTable(
@@ -338,6 +320,9 @@ namespace AspProject.Migrations
 
             migrationBuilder.DropTable(
                 name: "HomeTeamTwos");
+
+            migrationBuilder.DropTable(
+                name: "MyProperty");
 
             migrationBuilder.DropTable(
                 name: "Promos");

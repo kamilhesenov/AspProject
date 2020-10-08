@@ -15,6 +15,7 @@ namespace AspProject.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly AplicationDbContext _context;
+        
 
         public HomeController(ILogger<HomeController> logger,AplicationDbContext context)
         {
@@ -27,19 +28,16 @@ namespace AspProject.Controllers
             HomeViewModel model = new HomeViewModel
             {
                 Hero = _context.Heroes.FirstOrDefault(),
-                Promo = _context.Promos.FirstOrDefault(),
+                Promos = _context.Promos.ToList(),
                 AboutUs = _context.AboutUs.FirstOrDefault(),
-                HomeService = _context.HomeServices.FirstOrDefault(),
-                HomeServiceItem = _context.HomeServiceItems.FirstOrDefault(),
-                DownloadApp = _context.DownloadApps.FirstOrDefault(),
-                DownloadAppStor = _context.DownloadAppStors.FirstOrDefault(),
-                HomeOurNew = _context.HomeOurNews.FirstOrDefault(),
-                HomeOurNewsItem = _context.HomeOurNewsItems.FirstOrDefault(),
+                AboutUsItems = _context.AboutUsItems.ToList(),
+                HomeServiceItems = _context.HomeServiceItems.ToList(),
+                HomePortfolioItems = _context.HomePortfolioItems.ToList(),
+                HomeOurNewsItems = _context.HomeOurNewsItems.ToList(),
                 Testimonial = _context.Testimonials.FirstOrDefault(),
-                TestemonialItem = _context.TestemonialItems.FirstOrDefault(),
-                HomeTeamTwo = _context.HomeTeamTwos.FirstOrDefault(),
-                HomeTeamTwoItem = _context.HomeTeamTwoItems.FirstOrDefault(),
-                HomeCallToAction = _context.HomeCallToActions.FirstOrDefault()
+                TestemonialItems = _context.TestemonialItems.ToList(),
+                HomeTeamTwoItems = _context.HomeTeamTwoItems.ToList(),
+                Setting = _context.Settings.FirstOrDefault()
             };
          ViewData["nav"] = "home";
             return View(model);

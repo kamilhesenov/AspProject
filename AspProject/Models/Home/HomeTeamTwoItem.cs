@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace AspProject.Models
 {
-    public class HomeTeamTwoItem : BaseEntity
+    public class HomeTeamTwoItem
     {
+        public int Id { get; set; }
+
         [Required, MaxLength(100)]
         public string FullName { get; set; }
 
@@ -30,3 +32,4 @@ namespace AspProject.Models
         public string Dribbble { get; set; }
     }
 }
+

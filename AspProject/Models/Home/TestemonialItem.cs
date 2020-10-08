@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace AspProject.Models
 {
-    public class TestemonialItem : BaseEntity
+    public class TestemonialItem
     {
+        public int Id { get; set; }
+
         [Required, MaxLength(500)]
         public string Text { get; set; }
 

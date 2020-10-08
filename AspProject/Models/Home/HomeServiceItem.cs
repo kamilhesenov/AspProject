@@ -12,6 +12,6 @@ namespace AspProject.Models
         public string Info { get; set; }
 
         [Required, MaxLength(100)]
-        public string MainIcon { get; set; }
+        public string Icon { get; set; }
     }
 }

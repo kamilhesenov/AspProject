@@ -1,4 +1,4 @@
-﻿
+﻿@model ProjectViewModel
 @{
     ViewData["Title"] = "Index";
 }
@@ -116,7 +116,7 @@
             </div>
         </section>
         <!--our pricing section end-->
-        <partial name="_Testimonial" />
+        <partial name="_Testimonial" model="Model.AboutTestimonials" />
         <partial name="_Client" />
 
     
