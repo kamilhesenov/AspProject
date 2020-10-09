@@ -33,7 +33,7 @@ namespace AspProject.Controllers
                 AboutUsItems = _context.AboutUsItems.ToList(),
                 HomeServiceItems = _context.HomeServiceItems.ToList(),
                 HomePortfolioItems = _context.HomePortfolioItems.ToList(),
-                HomeOurNewsItems = _context.HomeOurNewsItems.ToList(),
+                HomeOurNewsItems = _context.HomeOurNewsItems.Take(3).ToList(),
                 Testimonial = _context.Testimonials.FirstOrDefault(),
                 TestemonialItems = _context.TestemonialItems.ToList(),
                 HomeTeamTwoItems = _context.HomeTeamTwoItems.ToList(),

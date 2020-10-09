@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AspProject.Models;
 using AspProject.Models.About;
+using AspProject.Models.BlogSidebar;
 using AspProject.Models.Home;
 using AspProject.Models.PageFAQ;
 using AspProject.Models.PageProjectDetail;
@@ -51,5 +52,7 @@ namespace AspProject.Data
         public DbSet<ProjectCounter> ProjectCounters { get; set; }
         public DbSet<ProjectPricing> ProjectPricings { get; set; }
         public DbSet<ProjectPricingItem> ProjectPricingItems { get; set; }
+        public DbSet<BlogSidebarBlog> BlogSidebarBlogs { get; set; }
+        public DbSet<BlogSidebarBlogItem> BlogSidebarBlogItems { get; set; }
     }
 }

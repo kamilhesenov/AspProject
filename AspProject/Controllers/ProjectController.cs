@@ -19,7 +19,12 @@ namespace AspProject.Controllers
         {
             ProjectViewModel model = new ProjectViewModel
             {
-                AboutTestimonials = _context.AboutTestimonials.ToList()
+                AboutTestimonials = _context.AboutTestimonials.ToList(),
+                HomePortfolioItems = _context.HomePortfolioItems.ToList(),
+                Clients = _context.Clients.ToList(),
+                ProjectCounter = _context.ProjectCounters.FirstOrDefault(),
+                ProjectPricings = _context.ProjectPricings.ToList(),
+                ProjectPricingItems = _context.ProjectPricingItems.ToList()
             };
 
             return View(model);
