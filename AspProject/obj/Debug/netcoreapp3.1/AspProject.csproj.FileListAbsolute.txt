@@ -162,3 +162,4 @@ C:\Users\Kamil\Desktop\AspProject\AspProject\obj\Debug\netcoreapp3.1\Razor\Views
 C:\Users\Kamil\Desktop\AspProject\AspProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Testimonial.cshtml.g.cs
 C:\Users\Kamil\Desktop\AspProject\AspProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\HomePageHeaderComponet\Default.cshtml.g.cs
 C:\Users\Kamil\Desktop\AspProject\AspProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\HomePageFooterComponent\Default.cshtml.g.cs
+C:\Users\Kamil\Desktop\AspProject\AspProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\HomeFooterLinksComponent\Default.cshtml.g.cs

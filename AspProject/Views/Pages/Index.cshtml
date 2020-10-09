@@ -1,4 +1,4 @@
-﻿
+﻿@model PageProjectDetailViewModel
 @{
     ViewData["Title"] = "Index";
 }
@@ -13,7 +13,7 @@
             <div class="row justify-content-between">
                 <div class="col-md-12 col-lg-8">
                     <div class="img-wrap mb-md-4 mb-lg-0">
-                        <img   src="~/assets/img/hero-bg7.jpg" alt="project" class="img-fluid rounded shadow-sm" />
+                        <img   src="~/assets/img/@Model.ProjectDetail.Photo" alt="project" class="img-fluid rounded shadow-sm" />
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-4">
@@ -58,32 +58,24 @@
                 <div class="col-md-6">
                     <div class="project-details-feature">
                         <ul class="list-unstyled tech-feature-list">
-                            <li class="py-1">
-                                <span class="ti-check-box mr-2 color-secondary"></span><strong>Foreclosure</strong>
-                                consultant Human resource consulting
-                            </li>
-                            <li class="py-1">
-                                <span class="ti-check-box mr-2 color-secondary"></span><strong>Corporate</strong>
-                                Immigration consultant, Information consulting
-                            </li>
-                            <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>SEO</strong> Optimization Creative consultant</li>
-                            <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Rapidiously</strong> conceptualize strategic before communities</li>
+                            @foreach (var item in Model.ProjectDetailItems.Take(4))
+                            {
+                                <li class="py-1">
+                                    <span class="ti-check-box mr-2 color-secondary"></span><strong>@item.Heading</strong>@item.Subject</li>
+                            }
+
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="project-details-feature">
                         <ul class="list-unstyled tech-feature-list">
-                            <li class="py-1">
-                                <span class="ti-check-box mr-2 color-secondary"></span><strong>Consultant</strong>
-                                pharmacist Creative consultant
-                            </li>
-                            <li class="py-1">
-                                <span class="ti-check-box mr-2 color-secondary"></span><strong>Monotonectally</strong>
-                                customize B2B core competencies
-                            </li>
-                            <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Immigration</strong> consultant, Information consulting</li>
-                            <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Consultant</strong> pharmacist Creative consultant</li>
+                            @foreach (var item in Model.ProjectDetailItems.Skip(4).Take(4))
+                            {
+                                <li class="py-1">
+                                    <span class="ti-check-box mr-2 color-secondary"></span><strong>@item.Heading</strong>@item.Subject</li>
+                            }
+
                         </ul>
                     </div>
                 </div>

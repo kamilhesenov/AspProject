@@ -19,5 +19,6 @@ namespace AspProject.Models.ViewModel
         public List<TestemonialItem> TestemonialItems { get; set; }
         public List<HomeTeamTwoItem> HomeTeamTwoItems { get; set; }
         public Setting Setting { get; set; }
+        public SocialLink SocialLink { get; set; }
     }
 }

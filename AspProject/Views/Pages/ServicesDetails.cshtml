@@ -1,4 +1,4 @@
-﻿
+﻿@model PageServicestDetailViewModel
 @{
     ViewData["Title"] = "ServicesDetails";
     Layout = "_Layout";
@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="col-lg-8 col-md-8">
                     <div class="service-details-wrap">
-                        <img   src="~/assets/img/slider-img-2.jpg" alt="services" class="img-fluid rounded shadow-sm" />
+                        <img   src="~/assets/img/@Model.ServicesDetail.Photo" alt="services" class="img-fluid rounded shadow-sm" />
                         <div class="services-detail-content mt-4">
                             <h4>Services Details</h4>
                             <p>
@@ -33,24 +33,12 @@
                                 vortals. Quickly aggregate enterprise portals with cross-platform e-business.
                             </p>
                             <ul class="list-unstyled tech-feature-list mb-3">
-                                <li class="py-1">
-                                    <span class="ti-check-box mr-2 color-secondary"></span><strong>Foreclosure</strong>
-                                    consultant Human consulting
-                                </li>
-                                <li class="py-1">
-                                    <span class="ti-check-box mr-2 color-secondary"></span><strong>Corporate</strong>
-                                    Immigration, Information
-                                </li>
-                                <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>SEO</strong> Optimization consultant</li>
-                                <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Rapidiously</strong> conceptualize communities</li>
-                                <li class="py-1">
-                                    <span class="ti-check-box mr-2 color-secondary"></span><strong>Consultant</strong>
-                                    pharmacist Creative consultant
-                                </li>
-                                <li class="py-1">
-                                    <span class="ti-check-box mr-2 color-secondary"></span><strong>Monotonectally</strong>
-                                    customize B2B core competencies
-                                </li>
+                                @foreach (var item in Model.ServicesDetailItems)
+                                {
+                                    <li class="py-1">
+                                        <span class="ti-check-box mr-2 color-secondary"></span><strong>@item.Heading</strong>@item.Subject</li>
+                                }
+
                             </ul>
 
                             <p>
@@ -74,10 +62,10 @@
                             <p>We are available in 24/7 hours for dedicated support</p>
                             <ul class="primary-list mt-25">
                                 <li>
-                                    <span class="ti-location-pin mr-2 color-primary"></span> 123 Yellow House, Mn 9007
+                                    <span class="ti-location-pin mr-2 color-primary"></span>@Model.Setting.Address
                                 </li>
-                                <li><span class="ti-mobile mr-2 color-primary"></span> (+123) 456-789-012</li>
-                                <li><span class="ti-email mr-2 color-primary"></span> youname@domail.com</li>
+                                <li><span class="ti-mobile mr-2 color-primary"></span>@Model.Setting.Phone</li>
+                                <li><span class="ti-email mr-2 color-primary"></span>@Model.Setting.Email</li>
                             </ul>
                         </aside>
 

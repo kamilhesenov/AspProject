@@ -1,4 +1,4 @@
-﻿
+﻿@model ServiceViewModel
 @{
     ViewData["Title"] = "Index";
 }
@@ -11,47 +11,45 @@
     <section class="promo-block ptb-100">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-lg-4">
-                    <div class="single-promo-block promo-hover-bg-1 hover-image shadow-lg p-5 rounded">
-                        <div class="promo-block-icon mb-3">
-                            <span class="ti-vector icon-md color-primary"></span>
-                        </div>
-                        <div class="promo-block-content">
-                            <h5>Creative Design</h5>
-                            <p>Compellingly promote collaborative products without synergistic schemas. </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4">
-                    <div class="single-promo-block promo-hover-bg-2 hover-image shadow-lg p-5 rounded">
-                        <div class="promo-block-icon mb-3">
-                            <span class="ti-lock icon-md color-primary"></span>
-                        </div>
-                        <div class="promo-block-content">
-                            <h5>Cyber Security</h5>
-                            <p>Enthusiastically scale mission-critical imperatives rather than an expanded array.</p>
+                @foreach (var item in Model.ServicePromos)
+                {
+                    <div class="col-md-4 col-lg-4">
+                        <div class="single-promo-block promo-hover-bg-1 hover-image shadow-lg p-5 rounded">
+                            <div class="promo-block-icon mb-3">
+                                <span class="@item.Icon icon-md color-primary"></span>
+                            </div>
+                            <div class="promo-block-content">
+                                <h5>@item.Title</h5>
+                                <p>@item.Content</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-lg-4">
-                    <div class="single-promo-block promo-hover-bg-3 hover-image shadow-lg p-5 rounded">
-                        <div class="promo-block-icon mb-3">
-                            <span class="ti-cloud icon-md color-primary"></span>
-                        </div>
-                        <div class="promo-block-content">
-                            <h5>Cloud Services</h5>
-                            <p>Rapidiously create cooperative resources rather than client-based leadership skills.</p>
-                        </div>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </section>
     <!--promo block with hover effect end-->
-    <partial name="_Services" />
+    <!--services section start-->
+    <section class="services-section ptb-100 gray-light-bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="section-heading text-center mb-4">
+                        <h2>First Class Business Solutions for You</h2>
+                        <p class="lead">
+                            Efficiently aggregate end-to-end core competencies without maintainable ideas. Dynamically
+                            foster tactical solutions without enabled value.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <partial name="_Services" model="Model.HomeServiceItems" />
+        </div>
+    </section>
+    <!--services section end-->
     <!--counter section start-->
     <section class="call-to-action ptb-100 gradient-overlay"
-             style="background: url('/assets/img/slider-img-3.jpg')no-repeat top center / cover fixed">
+             style="background: url('/assets/img/@Model.CounterPhoto.Photo')no-repeat top center / cover fixed">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-8">
@@ -62,34 +60,16 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-lg-3">
-                    <div class="single-counter rounded p-4 text-center text-white">
-                        <span class="ti-medall-alt icon-md"></span>
-                        <h3 class="mb-0 text-white">1600</h3>
-                        <p>Active users</p>
+                @foreach (var item in Model.Counters)
+                {
+                    <div class="col-md-6 col-lg-3">
+                        <div class="single-counter rounded p-4 text-center text-white">
+                            <span class="@item.Icon icon-md"></span>
+                            <h3 class="mb-0 text-white">@item.Count</h3>
+                            <p>@item.Heading</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="single-counter rounded p-4 text-center text-white">
-                        <span class="ti-headphone-alt icon-md"></span>
-                        <h3 class="mb-0 text-white">2500</h3>
-                        <p>Global client</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="single-counter rounded p-4 text-center text-white">
-                        <span class="ti-cup icon-md"></span>
-                        <h3 class="mb-0 text-white">2150</h3>
-                        <p>Win award</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="single-counter rounded p-4 text-center text-white">
-                        <span class="ti-user icon-md"></span>
-                        <h3 class="mb-0 text-white">2150</h3>
-                        <p>Clients satisfaction</p>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </section>
@@ -104,21 +84,24 @@
                 <div class="col-md-6">
                     <div class="contact-us-form gray-light-bg rounded p-5">
                         <h4>Ready to get started?</h4>
-                        <form action="#" method="POST" id="contactForm" class="contact-us-form">
+                        <form asp-action="SendMessage" asp-controller="Services" method="POST" id="contactForm" class="contact-us-form">
                             <div class="form-row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="name" placeholder="Enter name" required="required">
+                                        <input asp-for="@Model.Message.Name" class="form-control" placeholder="Enter name">
+                                        <span asp-validation-for="@Model.Message.Name" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" name="email" placeholder="Enter email" required="required">
+                                        <input asp-for="@Model.Message.Email" class="form-control" placeholder="Enter email">
+                                        <span asp-validation-for="@Model.Message.Email" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <textarea name="message" id="message" class="form-control" rows="7" cols="25" placeholder="Message"></textarea>
+                                        <textarea asp-for="@Model.Message.Text" class="form-control" rows="7" cols="25" placeholder="Message"></textarea>
+                                        <span asp-validation-for="@Model.Message.Text" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-12 mt-3">
@@ -140,13 +123,10 @@
                         <hr class="my-5">
 
                         <h5>Our Headquarters</h5>
-                        <address>
-                            100 yellow house, Mn <br>
-                            Factory, United State, 13420
-                        </address>
+                        <address>@Model.Setting.Address</address>
                         <br>
-                        <span>Phone: +1234567890123</span> <br>
-                        <span>Email: <a href="mailto:email@yourdomain.com" class="link-color">email@yourdomain.com</a></span>
+                        <span>Phone: @Model.Setting.Phone</span> <br>
+                        <span>Email: <a href="mailto:email@yourdomain.com" class="link-color">@Model.Setting.Email</a></span>
 
                     </div>
                 </div>
@@ -154,8 +134,28 @@
         </div>
     </section>
     <!--contact us section end-->
-    <partial name="_Client" />
+    <partial name="_Client" model="Model.Clients" />
 
 
 </div>
 <!--body content wrap end-->
+
+
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+    <script>
+        $("#contactForm").submit(function (e) {
+            Swal.fire(
+                'Good job!',
+                'You clicked the button!',
+                'success'
+            );
+
+        })
+
+    </script>
+}
+
