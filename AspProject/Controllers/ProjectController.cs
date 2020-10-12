@@ -24,7 +24,13 @@ namespace AspProject.Controllers
                 Clients = _context.Clients.ToList(),
                 ProjectCounter = _context.ProjectCounters.FirstOrDefault(),
                 ProjectPricings = _context.ProjectPricings.ToList(),
-                ProjectPricingItems = _context.ProjectPricingItems.ToList()
+                ProjectPricingItems = _context.ProjectPricingItems.ToList(),
+                HeaderViewModel = new HeaderViewModel
+                {
+                    Title = "Our Projects",
+                    Subject = "Pages",
+                    Content = "Projects"
+                }
             };
 
             return View(model);

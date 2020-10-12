@@ -1,4 +1,5 @@
 ﻿using AspProject.Models.Home;
+using ReflectionIT.Mvc.Paging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,5 +21,6 @@ namespace AspProject.Models.ViewModel
         public List<HomeTeamTwoItem> HomeTeamTwoItems { get; set; }
         public Setting Setting { get; set; }
         public SocialLink SocialLink { get; set; }
+        public PagingList<HomeOurNewsItem> PagedList { get; set; }
     }
 }

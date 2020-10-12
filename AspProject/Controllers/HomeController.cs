@@ -7,7 +7,7 @@ using AspProject.Data;
 using AspProject.Models.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-
+using ReflectionIT.Mvc.Paging;
 
 namespace AspProject.Controllers
 {
@@ -25,6 +25,7 @@ namespace AspProject.Controllers
 
         public IActionResult Index()
         {
+            var hm = _context.HomeOurNewsItems.OrderBy(x => x.Id);
             HomeViewModel model = new HomeViewModel
             {
                 Hero = _context.Heroes.FirstOrDefault(),
@@ -33,11 +34,11 @@ namespace AspProject.Controllers
                 AboutUsItems = _context.AboutUsItems.ToList(),
                 HomeServiceItems = _context.HomeServiceItems.ToList(),
                 HomePortfolioItems = _context.HomePortfolioItems.ToList(),
-                HomeOurNewsItems = _context.HomeOurNewsItems.Take(3).ToList(),
                 Testimonial = _context.Testimonials.FirstOrDefault(),
                 TestemonialItems = _context.TestemonialItems.ToList(),
                 HomeTeamTwoItems = _context.HomeTeamTwoItems.ToList(),
-                Setting = _context.Settings.FirstOrDefault()
+                Setting = _context.Settings.FirstOrDefault(),
+                PagedList = PagingList.Create(hm, 3, 1)
             };
          ViewData["nav"] = "home";
             return View(model);

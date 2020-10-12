@@ -11,9 +11,6 @@ namespace AspProject.Models
     {
         public int Id { get; set; }
 
-        [Column(TypeName ="date")]
-        public DateTime? AddedDate { get; set; }
-       
         [Required,MaxLength(150)]
         public string Title { get; set; }
 

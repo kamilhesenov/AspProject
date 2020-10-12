@@ -1,4 +1,6 @@
-﻿@model List<HomeOurNewsItem>
+﻿@model ReflectionIT.Mvc.Paging.PagingList<HomeOurNewsItem>;
+@using ReflectionIT.Mvc.Paging;
+@addTagHelper *, ReflectionIT.Mvc.Paging;
 <!--blog section start-->
 <div class="row justify-content-center">
     @foreach (var item in Model)
@@ -18,7 +20,7 @@
                         <span class="fa fa-user mr-2 p-3 bg-white rounded-circle border"></span>
                         <div class="author-content">
                             <a href="#" class="d-block">@item.Heading</a>
-                            <small>@item.AddedDate.Value.ToString("MMMM dd yyyy")</small>
+                            <small>@item.AddedDate.ToString("MMMM dd yyyy")</small>
                         </div>
                     </div>
                     <div class="author-like">
@@ -31,3 +33,4 @@
 
 </div>
 <!--blog section end-->
+

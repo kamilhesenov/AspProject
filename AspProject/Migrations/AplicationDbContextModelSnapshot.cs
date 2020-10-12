@@ -26,16 +26,12 @@ namespace AspProject.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime?>("AddedDate")
-                        .HasColumnType("date");
-
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(500)")
                         .HasMaxLength(500);
 
                     b.Property<string>("Photo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -86,9 +82,6 @@ namespace AspProject.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime?>("AddedDate")
-                        .HasColumnType("date");
-
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(500)")
@@ -122,7 +115,6 @@ namespace AspProject.Migrations
                         .HasMaxLength(100);
 
                     b.Property<string>("Photo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -152,7 +144,6 @@ namespace AspProject.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Photo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -167,9 +158,6 @@ namespace AspProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime?>("AddedDate")
-                        .HasColumnType("date");
 
                     b.Property<string>("Content")
                         .IsRequired()
@@ -201,16 +189,12 @@ namespace AspProject.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime?>("AddedDate")
-                        .HasColumnType("date");
-
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(500)")
                         .HasMaxLength(500);
 
                     b.Property<string>("Photo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -231,7 +215,7 @@ namespace AspProject.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime?>("AddedDate")
+                    b.Property<DateTime>("AddedDate")
                         .HasColumnType("date");
 
                     b.Property<string>("Comment")
@@ -250,7 +234,6 @@ namespace AspProject.Migrations
                         .HasMaxLength(50);
 
                     b.Property<string>("Photo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -276,11 +259,13 @@ namespace AspProject.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("AddedDate")
+                        .HasColumnType("date");
+
                     b.Property<DateTime>("Date")
                         .HasColumnType("date");
 
                     b.Property<string>("Photo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -301,9 +286,6 @@ namespace AspProject.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime?>("AddedDate")
-                        .HasColumnType("date");
-
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(500)")
@@ -315,7 +297,6 @@ namespace AspProject.Migrations
                         .HasMaxLength(50);
 
                     b.Property<string>("Photo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -390,7 +371,7 @@ namespace AspProject.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime?>("AddedDate")
+                    b.Property<DateTime>("AddedDate")
                         .HasColumnType("date");
 
                     b.Property<string>("Content")
@@ -409,7 +390,6 @@ namespace AspProject.Migrations
                         .HasMaxLength(50);
 
                     b.Property<string>("Photo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -430,9 +410,6 @@ namespace AspProject.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime?>("AddedDate")
-                        .HasColumnType("date");
-
                     b.Property<string>("Category")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
@@ -444,7 +421,6 @@ namespace AspProject.Migrations
                         .HasMaxLength(500);
 
                     b.Property<string>("Photo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -464,9 +440,6 @@ namespace AspProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime?>("AddedDate")
-                        .HasColumnType("date");
 
                     b.Property<string>("Content")
                         .IsRequired()
@@ -521,7 +494,6 @@ namespace AspProject.Migrations
                         .HasMaxLength(100);
 
                     b.Property<string>("Photo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -546,9 +518,6 @@ namespace AspProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime?>("AddedDate")
-                        .HasColumnType("date");
 
                     b.Property<string>("Content")
                         .IsRequired()
@@ -578,7 +547,6 @@ namespace AspProject.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Photo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -617,7 +585,6 @@ namespace AspProject.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Photo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -656,7 +623,6 @@ namespace AspProject.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Photo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -678,7 +644,6 @@ namespace AspProject.Migrations
                         .HasMaxLength(50);
 
                     b.Property<string>("Photo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -711,9 +676,6 @@ namespace AspProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime?>("AddedDate")
-                        .HasColumnType("date");
 
                     b.Property<string>("Content")
                         .IsRequired()
@@ -768,7 +730,6 @@ namespace AspProject.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Photo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -808,9 +769,6 @@ namespace AspProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime?>("AddedDate")
-                        .HasColumnType("date");
 
                     b.Property<string>("Content")
                         .IsRequired()
@@ -872,7 +830,6 @@ namespace AspProject.Migrations
                         .HasMaxLength(100);
 
                     b.Property<string>("Photo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -900,9 +857,6 @@ namespace AspProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime?>("AddedDate")
-                        .HasColumnType("date");
 
                     b.Property<string>("Content")
                         .IsRequired()

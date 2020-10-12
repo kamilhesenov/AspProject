@@ -15,5 +15,6 @@ namespace AspProject.Models.ViewModel
         public ProjectCounter ProjectCounter { get; set; }
         public List<ProjectPricing> ProjectPricings { get; set; }
         public List<ProjectPricingItem> ProjectPricingItems { get; set; }
+        public HeaderViewModel HeaderViewModel { get; set; }
     }
 }

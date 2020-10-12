@@ -11,5 +11,6 @@ namespace AspProject.Models.ViewModel
         public ServicesDetail ServicesDetail { get; set; }
         public List<ServicesDetailItem> ServicesDetailItems { get; set; }
         public Setting Setting { get; set; }
+        public HeaderViewModel HeaderViewModel { get; set; }
     }
 }

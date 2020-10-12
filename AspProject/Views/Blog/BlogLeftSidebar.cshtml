@@ -7,7 +7,7 @@
 <!--body content wrap start-->
 <div class="main">
 
-    <partial name="_HeaderSection" />
+    <partial name="_HeaderSection" model="Model.HeaderViewModel" />
     <!--blog section start-->
     <div class="module ptb-100">
         <div class="container">
@@ -89,7 +89,7 @@
                                 <div class="post-header">
                                     <h2 class="post-title"><a href="blog-single.html">@item.Title</a></h2>
                                     <ul class="post-meta">
-                                        <li>@item.AddedDate.Value.ToString("MMMM dd,yyyy")</li>
+                                        <li>@item.AddedDate.ToString("MMMM dd,yyyy")</li>
                                         <li><a href="#">@item.Heading</a>, <a href="#">@item.Subject</a></li>
                                         <li><a href="#">@item.Comment</a></li>
                                     </ul>

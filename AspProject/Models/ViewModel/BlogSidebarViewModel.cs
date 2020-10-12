@@ -10,5 +10,6 @@ namespace AspProject.Models.ViewModel
     {
         public List<BlogSidebarBlog> BlogSidebarBlogs { get; set; }
         public List<BlogSidebarBlogItem> BlogSidebarBlogItems { get; set; }
+        public HeaderViewModel HeaderViewModel { get; set; }
     }
 }

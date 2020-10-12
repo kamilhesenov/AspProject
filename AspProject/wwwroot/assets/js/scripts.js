@@ -523,6 +523,10 @@ jQuery(function ($) {
           $(parentSelector + " .message-box").removeClass('d-none').addClass('d-block ');
           $(parentSelector + " .message-box div").removeClass('alert-success').addClass('alert-danger').text('Found error in the form. Please check again.');
       }
-  }
+    }
+
+    $(".pagination li a").click(function () {
+        $(this).addClass("activepage");
+    })
 
 }); // JQuery end

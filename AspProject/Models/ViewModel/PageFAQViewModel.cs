@@ -9,5 +9,6 @@ namespace AspProject.Models.ViewModel
     public class PageFAQViewModel
     {
         public List<PageFaqPromo> PageFaqPromos { get; set; }
+        public HeaderViewModel HeaderViewModel { get; set; }
     }
 }

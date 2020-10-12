@@ -12,5 +12,6 @@ namespace AspProject.Models.ViewModel
         public List<OurWorkProcess> OurWorkProcesses { get; set; }
         public List<AboutTestimonial> AboutTestimonials { get; set; }
         public List<Client> Clients { get; set; }
+        public HeaderViewModel HeaderViewModel { get; set; }
     }
 }

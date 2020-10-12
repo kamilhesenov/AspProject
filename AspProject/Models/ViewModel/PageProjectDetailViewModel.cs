@@ -10,5 +10,6 @@ namespace AspProject.Models.ViewModel
     {
         public ProjectDetail ProjectDetail { get; set; }
         public List<ProjectDetailItem> ProjectDetailItems { get; set; }
+        public HeaderViewModel HeaderViewModel { get; set; }
     }
 }

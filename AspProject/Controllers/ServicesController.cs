@@ -25,7 +25,13 @@ namespace AspProject.Controllers
                 ServicePromos = _context.ServicePromos.ToList(),
                 Counters = _context.Counters.ToList(),
                 Setting = _context.Settings.FirstOrDefault(),
-                CounterPhoto = _context.CounterPhotos.FirstOrDefault()
+                CounterPhoto = _context.CounterPhotos.FirstOrDefault(),
+                HeaderViewModel = new HeaderViewModel
+                {
+                    Title = "Our Services",
+                    Subject = "Pages",
+                    Content = "Services"
+                }
             };
 
             return View(model);

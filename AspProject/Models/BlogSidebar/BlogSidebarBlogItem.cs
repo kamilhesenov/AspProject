@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,7 +12,7 @@ namespace AspProject.Models.BlogSidebar
     {
         public int Id { get; set; }
 
-        [Required,MaxLength(100)]
+        [MaxLength(100)]
         public string Photo { get; set; }
 
         [Required, MaxLength(200)]
@@ -19,5 +20,11 @@ namespace AspProject.Models.BlogSidebar
 
         [Column(TypeName ="date")]
         public DateTime Date { get; set; }
+
+        [NotMapped]
+        public IFormFile Upload { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime AddedDate { get; set; }
     }
 }

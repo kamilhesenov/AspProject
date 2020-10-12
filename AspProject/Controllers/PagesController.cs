@@ -20,7 +20,13 @@ namespace AspProject.Controllers
             PageProjectDetailViewModel model = new PageProjectDetailViewModel
             {
                 ProjectDetail = _context.ProjectDetails.FirstOrDefault(),
-                ProjectDetailItems = _context.ProjectDetailItems.ToList()
+                ProjectDetailItems = _context.ProjectDetailItems.ToList(),
+                HeaderViewModel = new HeaderViewModel
+                {
+                    Title = "Project Details",
+                    Subject = "Pages",
+                    Content = "Project Details"
+                }
             };
 
             return View(model);
@@ -32,7 +38,13 @@ namespace AspProject.Controllers
             {
                 ServicesDetail = _context.ServicesDetails.FirstOrDefault(),
                 ServicesDetailItems = _context.ServicesDetailItems.ToList(),
-                Setting = _context.Settings.FirstOrDefault()
+                Setting = _context.Settings.FirstOrDefault(),
+                HeaderViewModel = new HeaderViewModel
+                {
+                    Title = "Services Details",
+                    Subject = "Pages",
+                    Content = "Services Details"
+                }
             };
 
             return View(model);
@@ -42,7 +54,13 @@ namespace AspProject.Controllers
         {
             PageFAQViewModel model = new PageFAQViewModel
             {
-                PageFaqPromos = _context.PageFaqPromos.ToList()
+                PageFaqPromos = _context.PageFaqPromos.ToList(),
+                HeaderViewModel = new HeaderViewModel
+                {
+                    Title = "FAQ Page",
+                    Subject = "Pages",
+                    Content = "Faq"
+                }
             };
 
             return View(model);

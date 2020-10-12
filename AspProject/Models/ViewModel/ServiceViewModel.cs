@@ -16,5 +16,6 @@ namespace AspProject.Models.ViewModel
         public List<Counter> Counters { get; set; }
         public Message Message { get; set; }
         public CounterPhoto CounterPhoto { get; set; }
+        public HeaderViewModel HeaderViewModel { get; set; }
     }
 }

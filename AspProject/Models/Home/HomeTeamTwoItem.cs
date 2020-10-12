@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -19,7 +21,7 @@ namespace AspProject.Models
         [Required, MaxLength(300)]
         public string Text { get; set; }
 
-        [Required, MaxLength(100)]
+        [MaxLength(100)]
         public string Photo { get; set; }
 
         [Required, MaxLength(100)]
@@ -30,6 +32,9 @@ namespace AspProject.Models
 
         [Required, MaxLength(100)]
         public string Dribbble { get; set; }
+
+        [NotMapped]
+        public IFormFile Upload { get; set; }
     }
 }
 

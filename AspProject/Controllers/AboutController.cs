@@ -27,7 +27,13 @@ namespace AspProject.Controllers
                 AboutTestimonials = _context.AboutTestimonials.ToList(),
                 AboutPromos = _context.AboutPromos.ToList(),
                 OurWorkProcesses = _context.OurWorkProcesses.ToList(),
-                Clients = _context.Clients.ToList()
+                Clients = _context.Clients.ToList(),
+                HeaderViewModel = new HeaderViewModel
+                {
+                    Title = "About Us",
+                    Subject = "Pages",
+                    Content = "About Us"
+                }
             };
 
             return View(model); 
