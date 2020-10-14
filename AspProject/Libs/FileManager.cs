@@ -11,6 +11,7 @@ namespace AspProject.Libs
     {
         string Upload(IFormFile file, string path = "wwwroot/uploads");
         void Delete(string filename, string deletePath = "wwwroot/uploads");
+        
     }
 
     public class FileManager : IFileManager
@@ -41,5 +42,7 @@ namespace AspProject.Libs
             return fileName;
         
     }
+
+        
     }
 }

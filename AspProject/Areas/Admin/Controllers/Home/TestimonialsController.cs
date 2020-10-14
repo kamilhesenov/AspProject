@@ -7,27 +7,26 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AspProject.Data;
 using AspProject.Models;
-using System.IO;
 
-namespace AspProject.Areas.Admin.Controllers
+namespace AspProject.Areas.Admin.Controllers.Home
 {
     [Area("Admin")]
-    public class HeroesController : Controller
+    public class TestimonialsController : Controller
     {
         private readonly AplicationDbContext _context;
 
-        public HeroesController(AplicationDbContext context)
+        public TestimonialsController(AplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Admin/Heroes
+        // GET: Admin/Testimonials
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Heroes.ToListAsync());
+            return View(await _context.Testimonials.ToListAsync());
         }
 
-        // GET: Admin/Heroes/Details/5
+        // GET: Admin/Testimonials/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,63 +34,39 @@ namespace AspProject.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var hero = await _context.Heroes
+            var testimonial = await _context.Testimonials
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (hero == null)
+            if (testimonial == null)
             {
                 return NotFound();
             }
 
-            return View(hero);
+            return View(testimonial);
         }
 
-        // GET: Admin/Heroes/Create
+        // GET: Admin/Testimonials/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/Heroes/Create
+        // POST: Admin/Testimonials/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Heading,Upload,Id,AddedDate,Title,Content")] Hero hero)
+        public async Task<IActionResult> Create([Bind("Id,Title,Content")] Testimonial testimonial)
         {
-            if (hero.Upload == null)
-            {
-                ModelState.AddModelError("Upload", "Şəkil məcburidir");
-            }
-            else
-            {
-                if (hero.Upload.ContentType != "image/jpeg" && hero.Upload.ContentType != "image/png" && hero.Upload.ContentType != "image/gif")
-                {
-                    ModelState.AddModelError("Upload", "Siz yalnız png,jpg və ya gif faylı yükləyə bilərsiniz");
-                }
-
-            }
-
             if (ModelState.IsValid)
             {
-                var fileName = DateTime.Now.ToString("yyyyMMddHHmmssff") + Path.GetExtension(hero.Upload.FileName);
-
-                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", fileName);
-
-                using (var stream = new FileStream(path, FileMode.Create))
-                {
-                    hero.Upload.CopyTo(stream);
-                }
-
-                hero.Photo = fileName;
-
-                _context.Add(hero);
+                _context.Add(testimonial);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(hero);
+            return View(testimonial);
         }
 
-        // GET: Admin/Heroes/Edit/5
+        // GET: Admin/Testimonials/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -99,22 +74,22 @@ namespace AspProject.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var hero = await _context.Heroes.FindAsync(id);
-            if (hero == null)
+            var testimonial = await _context.Testimonials.FindAsync(id);
+            if (testimonial == null)
             {
                 return NotFound();
             }
-            return View(hero);
+            return View(testimonial);
         }
 
-        // POST: Admin/Heroes/Edit/5
+        // POST: Admin/Testimonials/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Heading,Photo,Id,AddedDate,Title,Content")] Hero hero)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Content")] Testimonial testimonial)
         {
-            if (id != hero.Id)
+            if (id != testimonial.Id)
             {
                 return NotFound();
             }
@@ -123,12 +98,12 @@ namespace AspProject.Areas.Admin.Controllers
             {
                 try
                 {
-                    _context.Update(hero);
+                    _context.Update(testimonial);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!HeroExists(hero.Id))
+                    if (!TestimonialExists(testimonial.Id))
                     {
                         return NotFound();
                     }
@@ -139,10 +114,10 @@ namespace AspProject.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(hero);
+            return View(testimonial);
         }
 
-        // GET: Admin/Heroes/Delete/5
+        // GET: Admin/Testimonials/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -150,30 +125,30 @@ namespace AspProject.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var hero = await _context.Heroes
+            var testimonial = await _context.Testimonials
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (hero == null)
+            if (testimonial == null)
             {
                 return NotFound();
             }
 
-            return View(hero);
+            return View(testimonial);
         }
 
-        // POST: Admin/Heroes/Delete/5
+        // POST: Admin/Testimonials/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var hero = await _context.Heroes.FindAsync(id);
-            _context.Heroes.Remove(hero);
+            var testimonial = await _context.Testimonials.FindAsync(id);
+            _context.Testimonials.Remove(testimonial);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool HeroExists(int id)
+        private bool TestimonialExists(int id)
         {
-            return _context.Heroes.Any(e => e.Id == id);
+            return _context.Testimonials.Any(e => e.Id == id);
         }
     }
 }

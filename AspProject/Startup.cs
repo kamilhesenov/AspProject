@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using AspProject.Data;
 using ReflectionIT.Mvc.Paging;
+using AspProject.Libs;
 
 namespace AspProject
 {
@@ -29,7 +30,11 @@ namespace AspProject
             services.AddControllersWithViews();
             services.AddDbContext<AplicationDbContext>(options =>
                  options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddPaging();
+            services.AddSingleton<IFileManager, FileManager>();
+            services.AddPaging(options => {
+                options.ViewName = "Bootstrap4";
+            });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

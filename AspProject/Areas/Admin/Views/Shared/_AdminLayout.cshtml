@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="~/css/sb-admin-2.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/f3c06c98be.js" crossorigin="anonymous"></script>
 
 </head>
@@ -61,18 +61,18 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">AboutUs</a>
-                        <a class="collapse-item" href="#">AboutUsItem</a>
-                        <a class="collapse-item" href="#">Hero</a>
-                        <a class="collapse-item" href="#">HomeOurNewsItem</a>
-                        <a class="collapse-item" href="#">HomePortfolioItem</a>
-                        <a class="collapse-item" href="#">HomeServiceItem</a>
-                        <a class="collapse-item" href="#">HomeTeamTwoItem</a>
-                        <a class="collapse-item" href="#">Promo</a>
-                        <a class="collapse-item" href="#">Setting</a>
-                        <a class="collapse-item" href="#">SocialLink</a>
-                        <a class="collapse-item" href="#">TestemonialItem</a>
-                        <a class="collapse-item" href="#">Testimonial</a>
+                        <a class="collapse-item" asp-controller="AboutUs">AboutUs</a>
+                        <a class="collapse-item" asp-controller="AboutUsItems">AboutUsItem</a>
+                        <a class="collapse-item" asp-controller="Heroes">Hero</a>
+                        <a class="collapse-item" asp-controller="HomeOurNewsItems">HomeOurNewsItem</a>
+                        <a class="collapse-item" asp-controller="HomePortfolioItems">HomePortfolioItem</a>
+                        <a class="collapse-item" asp-controller="HomeServiceItems">HomeServiceItem</a>
+                        <a class="collapse-item" asp-controller="HomeTeamTwoItems">HomeTeamTwoItem</a>
+                        <a class="collapse-item" asp-controller="Promoes">Promo</a>
+                        <a class="collapse-item" asp-controller="Settings">Setting</a>
+                        <a class="collapse-item" asp-controller="SocialLinks">SocialLink</a>
+                        <a class="collapse-item" asp-controller="TestemonialItems">TestemonialItem</a>
+                        <a class="collapse-item" asp-controller="Testimonials">Testimonial</a>
                     </div>
                 </div>
             </li>
@@ -289,15 +289,7 @@
 
             </div>
             <!-- End of Main Content -->
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+            
 
         </div>
         <!-- End of Content Wrapper -->
@@ -329,14 +321,14 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="~/js/sb-admin-2.min.js"></script>
 
 </body>
 @RenderSection("Scripts", false)

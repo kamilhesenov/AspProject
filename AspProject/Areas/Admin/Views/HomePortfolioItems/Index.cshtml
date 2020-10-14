@@ -1,0 +1,53 @@
+﻿@model IEnumerable<AspProject.Models.HomePortfolioItem>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+    <p class="d-flex justify-content-center align-items-center">
+        <a class="btn btn-outline-success w-25" asp-action="Create"><i class="fas fa-plus"></i></a>
+    </p>
+
+<table class="table table-striped ml-1">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <img src="~/uploads/portfolio/@item.Photo" class="img-fluid" width="100px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-edit"></i></a>
+                <a class="btn btn-outline-info ml-1" asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-info"></i></a>
+                <a class="btn btn-outline-danger ml-1" asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-trash"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

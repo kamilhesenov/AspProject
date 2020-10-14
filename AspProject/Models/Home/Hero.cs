@@ -10,7 +10,7 @@ namespace AspProject.Models
 {
     public class Hero : BaseEntity
     {
-        [Required,MaxLength(50)]
+        [Required(ErrorMessage = "Basliq boş ola bilməz"),MaxLength(50,ErrorMessage = "Maksimum 50 xarakter olmalıdır")]
         public string Heading { get; set; }
 
         [MaxLength(100)]
