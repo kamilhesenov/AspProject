@@ -12,6 +12,8 @@ using Microsoft.EntityFrameworkCore;
 using AspProject.Data;
 using ReflectionIT.Mvc.Paging;
 using AspProject.Libs;
+using Microsoft.AspNetCore.Identity;
+using AspProject.Models;
 
 namespace AspProject
 {
@@ -31,6 +33,19 @@ namespace AspProject
             services.AddDbContext<AplicationDbContext>(options =>
                  options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddSingleton<IFileManager, FileManager>();
+            services.AddIdentity<AppUser, IdentityRole>(identityOptions =>
+            {
+
+                identityOptions.Password.RequireDigit = true;
+                identityOptions.Password.RequireLowercase = false;
+                identityOptions.Password.RequireNonAlphanumeric = false;
+                identityOptions.Password.RequireUppercase = false;
+
+                identityOptions.Lockout.MaxFailedAccessAttempts = 5;
+                identityOptions.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+                identityOptions.Lockout.AllowedForNewUsers = true;
+            }).AddEntityFrameworkStores<AplicationDbContext>().AddDefaultTokenProviders();
+
             services.AddPaging(options => {
                 options.ViewName = "Bootstrap4";
             });

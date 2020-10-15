@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kamil\\Desktop\\AspProject\\AspProject\\AspProject.csproj": {}
+    "C:\\Users\\Kamil\\Desktop\\Test\\AspProject\\AspProject\\AspProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kamil\\Desktop\\AspProject\\AspProject\\AspProject.csproj": {
+    "C:\\Users\\Kamil\\Desktop\\Test\\AspProject\\AspProject\\AspProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kamil\\Desktop\\AspProject\\AspProject\\AspProject.csproj",
+        "projectUniqueName": "C:\\Users\\Kamil\\Desktop\\Test\\AspProject\\AspProject\\AspProject.csproj",
         "projectName": "AspProject",
-        "projectPath": "C:\\Users\\Kamil\\Desktop\\AspProject\\AspProject\\AspProject.csproj",
+        "projectPath": "C:\\Users\\Kamil\\Desktop\\Test\\AspProject\\AspProject\\AspProject.csproj",
         "packagesPath": "C:\\Users\\Kamil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kamil\\Desktop\\AspProject\\AspProject\\obj\\",
+        "outputPath": "C:\\Users\\Kamil\\Desktop\\Test\\AspProject\\AspProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kamil\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -38,29 +38,33 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.8, )"
+              "version": "[3.1.9, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.8, )"
+              "version": "[3.1.9, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.8, )"
+              "version": "[3.1.9, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[3.1.8, )"
+              "version": "[3.1.9, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.8, )"
+              "version": "[3.1.9, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AspProject.Models;
+﻿using AspProject.Models;
 using AspProject.Models.About;
 using AspProject.Models.BlogSidebar;
 using AspProject.Models.Home;
@@ -11,13 +7,14 @@ using AspProject.Models.PageProjectDetail;
 using AspProject.Models.PageServicesDetail;
 using AspProject.Models.Project;
 using AspProject.Models.Service;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace AspProject.Data
 {
-    public class AplicationDbContext : DbContext
+    public class AplicationDbContext: IdentityDbContext<AppUser>
     {
-        public AplicationDbContext(DbContextOptions<AplicationDbContext>options):base(options)
+        public AplicationDbContext(DbContextOptions<AplicationDbContext> options) : base(options)
         {
 
         }
