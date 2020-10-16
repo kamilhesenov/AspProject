@@ -21,27 +21,20 @@ using AspProject;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\Kamil\Desktop\Test\AspProject\AspProject\Areas\Admin\Views\_ViewImports.cshtml"
-using AspProject.Areas.Admin.Models;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 3 "C:\Users\Kamil\Desktop\Test\AspProject\AspProject\Areas\Admin\Views\_ViewImports.cshtml"
 using AspProject.Models.ViewModel;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Kamil\Desktop\Test\AspProject\AspProject\Areas\Admin\Views\_ViewImports.cshtml"
+#line 3 "C:\Users\Kamil\Desktop\Test\AspProject\AspProject\Areas\Admin\Views\_ViewImports.cshtml"
 using AspProject.Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"66a4826ba6fe72e5da12548c7a8d6fb3f7f22b7a", @"/Areas/Admin/Views/TestemonialItems/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0c7285b18cc2cc9b1e0c82199a99885779e97400", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"548d2af263a2b236b90ad53b790d00f6f7a7b303", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_TestemonialItems_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<AspProject.Models.TestemonialItem>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("img-fluid"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -142,7 +135,7 @@ using AspProject.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n        </dt>\r\n        <dd class = \"col-sm-10\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "66a4826ba6fe72e5da12548c7a8d6fb3f7f22b7a8745", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "66a4826ba6fe72e5da12548c7a8d6fb3f7f22b7a8539", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -183,7 +176,7 @@ AddHtmlAttributeValue("", 1092, Model.Photo, 1092, 12, false);
 #line hidden
 #nullable disable
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<div class=\"d-flex justify-content-center align-items-center mt-5\">\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "66a4826ba6fe72e5da12548c7a8d6fb3f7f22b7a11205", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "66a4826ba6fe72e5da12548c7a8d6fb3f7f22b7a10999", async() => {
                 WriteLiteral("<i class=\"fas fa-edit\"></i>");
             }
             );
@@ -215,7 +208,7 @@ AddHtmlAttributeValue("", 1092, Model.Photo, 1092, 12, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "66a4826ba6fe72e5da12548c7a8d6fb3f7f22b7a13506", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "66a4826ba6fe72e5da12548c7a8d6fb3f7f22b7a13300", async() => {
                 WriteLiteral("Return to Back");
             }
             );

@@ -113,6 +113,21 @@
                                     <li><a asp-controller="blog" asp-action="blogLeftSidebar">Blog Left Sidebar</a></li>
                                 </ul>
                             </li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li>
+                                    @User.Identity.Name
+                                </li>
+                                <li>
+                                    <a asp-controller="account" asp-action="logout">Logout</a>
+                                </li>
+                            }
+                            else
+                            {
+                            <li>
+                                <a asp-controller="account" asp-action="login">Login</a>
+                            </li>
+                            }
                         </ul>
                     </div>
                 </div>
@@ -169,6 +184,21 @@
                                     <li><a asp-controller="blog" asp-action="blogLeftSidebar">Blog Left Sidebar</a></li>
                                 </ul>
                             </li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li>
+                                    @User.Identity.Name
+                                </li>
+                                <li>
+                                    <a asp-controller="account" asp-action="logout">Logout</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a asp-controller="account" asp-action="login">Login</a>
+                                </li>
+                            }
                         </ul>
                     </div>
                 </div>
