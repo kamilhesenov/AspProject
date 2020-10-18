@@ -81,7 +81,7 @@ namespace AspProject.Areas.Admin.Controllers.Home
                 return View(model);
             }
 
-            return NotFound();
+            return RedirectToAction("Index", "NotFound404");
         }
         [HttpPost]
         public async Task<IActionResult> Edit(string userId, List<string> roles)
@@ -106,7 +106,7 @@ namespace AspProject.Areas.Admin.Controllers.Home
                 return RedirectToAction("UserList");
             }
 
-            return NotFound();
+            return RedirectToAction("Index", "NotFound404");
         }
     }
 }

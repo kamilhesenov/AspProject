@@ -4,10 +4,15 @@
 }
 <div asp-validation-summary="All" class="text-danger"></div>
 
-<form asp-action="Create" method="post">
-    <div class="form-group">
-        <label for="name">Yeni rol</label>
-        <input name="name" class="form-control" />
+<div class="row ml-1">
+    <div class="col-lg-6">
+        <form asp-action="Create" method="post">
+            <div class="form-group">
+                <label for="name">Yeni rol</label>
+                <input name="name" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Elave et</button>
+            <a asp-action="Index" class="btn btn-outline-secondary ml-3">Return to Back</a>
+        </form>
     </div>
-    <button type="submit" class="btn btn-primary">Elave et</button>
-</form>
+</div>

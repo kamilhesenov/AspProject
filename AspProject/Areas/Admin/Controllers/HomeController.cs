@@ -9,7 +9,7 @@ namespace AspProject.Areas.Admin.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+           return View();
         }
     }
 }

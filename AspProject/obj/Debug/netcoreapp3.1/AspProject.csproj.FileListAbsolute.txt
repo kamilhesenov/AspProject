@@ -518,3 +518,4 @@ C:\Users\Kamil\Desktop\Test\AspProject\AspProject\obj\Debug\netcoreapp3.1\Razor\
 C:\Users\Kamil\Desktop\Test\AspProject\AspProject\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Roles\Create.cshtml.g.cs
 C:\Users\Kamil\Desktop\Test\AspProject\AspProject\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Roles\Edit.cshtml.g.cs
 C:\Users\Kamil\Desktop\Test\AspProject\AspProject\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Roles\UserList.cshtml.g.cs
+C:\Users\Kamil\Desktop\Test\AspProject\AspProject\obj\Debug\netcoreapp3.1\Razor\Views\NotFound404\Index.cshtml.g.cs

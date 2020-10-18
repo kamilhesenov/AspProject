@@ -47,6 +47,7 @@ namespace AspProject.Controllers
                 ModelState.AddModelError("", "Email or password wrong!");
                 return View(login);
             }
+            
             // Admin Login edəndə birbaşa admin-panele girsin
             //IEnumerable<string> role = await _userManager.GetRolesAsync(loginUser);
             //foreach (var item in role)
